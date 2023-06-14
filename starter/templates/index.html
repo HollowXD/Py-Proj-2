@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <title>Termina Cupcake Store</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://lh3.ggpht.com/Fsc4u22szw9KVCOc8WdvtFw3qtCtwKLHPxpUpoP9vtRJ5d_5kxRC9kx2GeknR-vVPk0=w720-h310"/>
+        <h1 class="title">Termina Cupcake Store</h1>
+        <div class="cart">
+            <a href="{{ url_for('order') }}">
+                <img class="cart-image" src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"/>
+                <h7>Cart - {{ items_num }}</h7>
+            </a>
+            <h7>Total: ${{ order_total }}</h7>
+        </div>
+    </header>
+    <main>
+        <div class="cupcake-container">
+            {% for cupcake in cupcakes %}
+            <div>
+                <a href="{{ url_for('individual_cupcake', name=cupcake['name']) }}">
+                    <h3>{{ cupcake["name"] }}</h3>
+                </a>
+            </div>
+                <h4>Flavor: {{ cupcake["flavor"] }}</h4>
+                <h4>Frosting: {{ cupcake["frosting"] }}</h4>
+                <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
+                <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
+                    <button class="add-to-cart">Add to Cart</button>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

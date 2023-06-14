@@ -1,0 +1,54 @@
+body {
+    margin: 0px;
+    background-image:url("https://cdn.wallpapersafari.com/25/74/xNgVer.jpg");
+    background-size: cover;
+}
+header {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    letter-spacing: 2px;
+    padding: 10px;
+    top: 0px;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 10px;
+    background-color: #3d3532;
+}
+.logo {
+    height: 200px;
+    margin-left: 0px;
+}
+.title {
+    text-decoration: underline;
+}
+.cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    background-color: wheat;
+    border: solid;
+}
+.cart-image {
+    height: 30px;
+}
+.cupcake-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color:darkorchid;
+    border:solid;
+    border-width: 10px;
+    width: 200px;
+}
+.add-to-cart:hover {
+    cursor: pointer;
+    transform: scale(1.1)
+}
+.add-to-cart:active {
+    transform: scale(0.97)
+}
